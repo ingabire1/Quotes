@@ -1,0 +1,70 @@
+<div id="down">
+  <div class="row">
+    <div class="col md 6">
+      <!-- <ul>
+  <li *ngFor="let quote of quotes">{{ quote.name }}</li>
+</ul> -->
+      <!-- <p *ngIf="quotes.length > 5">You have too many quotes</p> -->
+      <!-- <app-quote></app-quote> -->
+      <ul>
+        <div *ngFor="let quote of quotes; let i = index">
+          <li>{{ quote.name }}</li>
+          <button (click)="toogleDetails(i)">Toogle Details</button>
+          <app-quotes
+            *ngIf="quote.showDescription"
+            [quote]="quote"
+            (isComplete)="completequote($event, i)"
+          >
+            <li appStrikethrough>{{ quote.name }}</li>
+            <li id="{{ i }}" appStrikethrough>
+              {{ quote.name }}due on {{ quote.completeDate | date | uppercase }}
+            </li>
+            <button (click)="toogleDetails(i)">Toogle Details</button>
+            <app-quotes
+              *ngIf="quote.showDescription"
+              [quote]="quote"
+              (isComplete)="completequote($event, i)"
+            ></app-quotes>
+
+            <app-quotes
+              *ngIf="quote.showDescription"
+              [quote]="quote"
+              (isComplete)="deletequote($event, i)"
+            ></app-quotes>
+
+            <!-- <p *ngIf="quotes.length > 5">You have too many quotes</p> -->
+          </app-quotes>
+          <button (click)="quoteDelete(true, i)">Delete Quote</button>
+        </div>
+      </ul>
+
+      <div class="container">
+        <div class="row" *ngFor="let goal of goals; let i = index">
+          <div class="row">
+            <h4 id="{{ i }}" appStrikethrough>
+              {{ quote.name }} due on
+              {{ quote.completeDate | date | uppercase }}
+            </h4>
+            <button class="btn btn-primary" (click)="toogleDetails(i)">
+              Toogle Details
+            </button>
+          </div>
+
+          <div class="row" *ngIf="quote.showDescription">
+            <app-quotes
+              [quote]="quote"
+              (isComplete)="deletequote($event, i)"
+            ></app-quotes>
+          </div>
+        </div>
+      </div>
+
+      <!-- <p *ngIf="quote.length > 5">You have too many quotes</p> -->
+    </div>
+    <div class="col md 6">
+      <div class="row">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+      </div>
+    </div>
+  </div>
+</div>

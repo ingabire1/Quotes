@@ -1,0 +1,21 @@
+<ul>
+  <div *ngFor="let quote of quotes" ,let i="index">
+    <li>{{ quote.name }}</li>
+    <button (click)="toogleDetails(i)">Toogle Details</button>
+
+    <app-quotes *ngIf="goal.showDescription" [quote]="quote"> </app-quotes>
+  </div>
+
+  <!-- <app-quotes [quote]="quote"></app-quotes> -->
+</ul>
+<!-- <p *ngIf="quotes.length > 5">You have too many quotes</p> -->
+
+<p>{{ quote.description }}</p>
+<p>Votes:{{ upvote }}</p>
+
+<!-- <p>This Quote will be completed in {{ quote.completeDate | dateCount }} days</p> -->
+<!-- <button (click)="qouteComplete(true)">Complete</button> -->
+<p>Uploaded since {{ quote.completeDate | dateCount }} days</p>
+<button (click)="isLiked($event)">Upvote</button>
+<button (click)="isDisLiked($event)">Downvote</button>
+<!-- <button class="btn btn-danger" (click)="quoteDelete(true)">Delete quote</button> -->
