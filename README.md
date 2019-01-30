@@ -1,6 +1,6 @@
-# LIFE Quote
+# Quote
 
-#### Life quote is an app designed to to create quotes and add the to the other quotes of renown authors, January 28th 2019
+#### quote is an app designed to to create quotes and add the to the other quotes of renown authors, January 28th 2019
 
 #### By **AIMEE SYLVIE INGABIRE.**
 
@@ -12,9 +12,8 @@ Life quote is an app designed to to create quotes and add the to the other quote
 
 - Open your computer
 - Connect to internet
-- search for my link:
-- There you are, create your own quiz and have fun!!!
-  The Life quote app can be view on mobile or computer and with ease and it is made for easy learning.
+- search for my link:https://ingabire1.github.io/Quotes/
+  The quote app can be view on mobile or computer and with ease and it is made for easy learning.
 
 ## App Specifications
 
